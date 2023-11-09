@@ -1,0 +1,51 @@
+header {
+    grid-area: header;
+    background-color: red;
+  }
+  
+  nav {
+    grid-area: nav;
+    background-color: blue;
+  }
+  
+  aside {
+    grid-area: aside;
+    background-color: aqua;
+  }
+  @media screen and (max-width: 480px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    header {
+      height: 80px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  
+    nav {
+      height: 500px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  
+    aside {
+      height: 200px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 100px);
+      gap: 10px;
+      grid-template-areas:
+        "header header header header "
+        "nav nav nav aside"
+        "nav nav nav aside"
+        "nav nav nav aside";
+    }
+  }

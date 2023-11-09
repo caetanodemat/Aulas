@@ -1,0 +1,67 @@
+header {
+    grid-area: header;
+    background-color: red;
+  }
+  
+  nav {
+    grid-area: nav;
+    background-color: blue;
+  }
+  
+  main {
+    grid-area: main;
+    background-color: yellowgreen;
+  }
+  
+  aside {
+    grid-area: aside;
+    background-color: aqua;
+  }
+  
+  footer {
+    grid-area: footer;
+    background-color: gray;
+  }
+  @media screen and (max-width: 480px) {
+    .container {
+      display: grid;
+      grid-template-columns: 100px auto 100px;
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+      grid-template-areas:
+        "header header header "
+        "nav main aside"
+        ". footer .";
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+      grid-template-areas:
+        "nav nav header header "
+        "nav nav main main"
+        "aside footer footer .";
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 100px);
+      gap: 10px;
+      grid-template-areas:
+        "header header header "
+        "nav nav nav"
+        "main main aside"
+        "footer footer footer";
+    }
+  
+    header {
+      background-color: pink;
+    }
+  }
